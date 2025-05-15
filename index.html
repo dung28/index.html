@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Câu Chuyện Tình Yêu</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Thêm hiệu ứng sparkle cho header */
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: white;
+      animation: sparkle 1.5s linear infinite;
+    }
+
+    @keyframes sparkle {
+      0% { transform: scale(0) rotate(0deg); opacity: 0; }
+      50% { transform: scale(1) rotate(180deg); opacity: 1; }
+      100% { transform: scale(0) rotate(360deg); opacity: 0; }
+    }
+
+    /* Hiệu ứng typing cho text */
+    .typing-text {
+      overflow: hidden;
+      border-right: 2px solid #e91e63;
+      white-space: nowrap;
+      animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #e91e63 }
+    }
+
+    /* Hiệu ứng hover cho memory items */
+    .memory-item {
+      transition: all 0.3s ease;
+    }
+
+    .memory-item:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Hiệu ứng shine cho images */
+    .shine {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shine::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        to right,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.3) 50%,
+        rgba(255,255,255,0) 100%
+      );
+      transform: rotate(30deg);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% { transform: translateX(-100%) rotate(30deg); }
+      100% { transform: translateX(100%) rotate(30deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="typing-text">Chuyện tình Trang và Dũng <span class="heart-icon">💑</span></h1>
+  </header>
+
+  <!-- Section 1 -->
+  <section class="story-section shine" style="animation-delay: 0.5s;">
+    <img src="./image/landaudichoivoiban.jpg" alt="Lần đầu đi chơi">
+    <h2>Lần đầu đi chơi với bạn của ẻm</h2>
+    <p>Đây là lần đầu ẻm dẫn mình đi chơi ra mắt bạn ẻm, nói thiệc là lúc đó ngại vãi, kiểu hông quen ai ngoài ẻm hết nhưng mà vẫn đi cho ẻm vui, kakaka.</p>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="story-section shine" style="animation-delay: 1s;">
+    <img src="./image/lamkhung.jpg" alt="Khoảnh khắc hạnh phúc">
+    <h2>Những khoảnh khắc tui với em làm khùng làm điên</h2>
+    <p>Đây có thể coi là những khoảnh khắc mà 2 đứa tui hạnh phúc nhất, vô lo, vô nghĩ, lúc nào cũng dính nhau, ngày nào cũng đi ăn, đi cè hê, đi đánh bài, đi quá mà thâm hụt tùm lum luon kaka.</p>
+    
+    <div class="memory-gallery">
+      <div class="memory-item shine">
+        <img src="./image/2dualamtrokhung.jpg" alt="Kỷ niệm 1">
+        <div class="memory-caption">Làm mặt dễ xương</div>
+      </div>
+      <div class="memory-item shine">
+        <img src="./image/nucuoigianxao.jpg" alt="Kỷ niệm 2">
+        <div class="memory-caption">Ẻm cười tươi như hoa luôn</div>
+      </div>
+      <div class="memory-item shine">
+        <img src="./image/chumo.jpg" alt="Kỷ niệm 3">
+        <div class="memory-caption">Ẻm chu mỏ</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="story-section shine" style="animation-delay: 1.5s;">
+    <img src="./image/chuphinhcuoicap.jpg" alt="Tương lai cùng nhau">
+    <h2>Đây là lần cuối 2 đứa chụp hình ở trưởng</h2>
+    <p>Ẻm còn nói sau này mà có lấy nhau sẽ để tấm này lên nữa chớ, sợ ẻm thiệc luôn ă chừ ư.</p>
+  </section>
+
+  <div class="love-counter">
+    <p>tẻn tẻn và mát mát đã ở bên nhau được:</p>
+    <div class="counter-number" id="loveCounter">926</div>
+    <p>ngày <span class="heart-icon">❤️</span></p>
+  </div>
+
+  <!-- Special Gallery Section -->
+  <section class="special-gallery">
+    <h2>Những Khoảnh Khắc Đáng Nhớ <span class="heart-icon">💖</span></h2>
+    <div class="special-gallery-grid">
+      <div class="special-gallery-item">
+        <img src="./image/toibiep.jpg" alt="Kỷ niệm 1">
+        <div class="special-gallery-caption">Tôi bị ép </div>
+      </div>
+      <div class="special-gallery-item">
+        <img src="./image/canhchoemngu.jpg" alt="Kỷ niệm 2">
+        <div class="special-gallery-caption">Ẻm thì ngủ còn tui thì chụp hình ẻm</div>
+      </div>
+      <div class="special-gallery-item">
+        <img src="./image/emruachen.jpg" alt="Kỷ niệm 3">
+        <div class="special-gallery-caption">Rửa chén mà mặt ngơ vậy eiu</div>
+      </div>
+      <div class="special-gallery-item">
+        <img src="./tinhyeu/image/2dualamtrokhung.jpg" alt="Kỷ niệm 4">
+        <div class="special-gallery-caption">Hai đứa làm trò khùng</div>
+      </div>
+      <div class="special-gallery-item">
+        <img src="./tinhyeu/image/chuphinhcuoicap.jpg" alt="Kỷ niệm 5">
+        <div class="special-gallery-caption">Chụp hình cuối cấp</div>
+      </div>
+      <div class="special-gallery-item">
+        <img src="./tinhyeu/image/landaudichoivoiban.jpg" alt="Kỷ niệm 6">
+        <div class="special-gallery-caption">Kỷ niệm đáng nhớ</div>
+      </div>
+    </div>
+  </section>
+  <div class="love-counter">
+  <!-- Floating Heart -->
+  <div class="floating-heart" onclick="createHearts()">❤️</div>
+  <div class="big-heart">❤️</div>
+<!-- Mystery Box -->
+  <div class="mystery-box">
+    <div class="mystery-box-front"></div>
+    <div class="mystery-box-back">
+      <p>Anh yeeuuuu emm rất nhiềuuuuuu ❤️</p>
+    </div>
+  </div>
+  <footer>
+    © 2025 - Câu chuyện của chúng ta sẽ còn kéo dài hơn nữa <span class="heart-icon">💖</span>
+  </footer>
+  <!-- Question Box -->
+  <div class="question-box">
+    <div class="question">
+      <span class="heart-decoration">❤️</span>
+     Anni 2 đứa là ngày nào?
+      <span class="heart-decoration">❤️</span>
+    </div>
+    <input type="text" class="answer-input" id="answer" placeholder="Nhập câu trả lời của bạn...">
+    <button class="check-answer" onclick="checkAnswer()">Kiểm tra</button>
+    <div class="hidden-message" id="hiddenMessage">
+      <p>Cái đồ mắm thúi đáng ghét, hứ!!!, anh biết là em tuổi thân lắm, anh rất xin lỗi vì những hành động của mình trong quá khứ, sao khi suy nghĩ kĩ lại thì anh thấy mình thiệc là tồi tệ, mồm thì bảo sẽ không làm em buồn, không làm em tuổi thân, nhưng hành động của anh lại đi ngược với điều đó. Anh biết là tính anh trẻ con, nhiều lần khiến em bực mình, làm em không vui hay là không làm vừa ý em> Anh xin lỗi vì những lần đó, cũng xin lỗi vì tất cả những điều đã làm để khiến em buồn, anh biết là lúc này nói ra những lời này là rất muộn, anh đã làm em phải khóc, phài đau lòng nhiều về anh, điều mà đáng ra em hong nên nhận được mà thay vào đó là tình yêu thương và sự quan tâm mới phải, em cho anh thêm 1 cơ hội để sửa sai nhen mắm, anh thấy trong thời gian vừa qua sau khi tự kiểm điểm bản thân thì anh đã quan tâm em nhiều nhiều hơn, anh hứa sau này sẽ tiếp tục phát huy và yêu thương em nhiều hơn. Khoảng thời gian này anh nhận ra rằng anh thật sự muốn ở bên em. Anh hứa sau này sẽ kiếm thiệc nhiều tiền để cho em mua đồ shoppe tiktok không cần nhìn giá. XIN HỨA <span class="heart-decoration">💖</span></p>
+    </div>
+  </div>
+
+  <footer>
+
+  <script>
+    // ... existing script ...
+
+    // Function to check answer
+    function checkAnswer() {
+      const answer = document.getElementById('answer').value.toLowerCase();
+      const hiddenMessage = document.getElementById('hiddenMessage');
+      
+      // Thay đổi câu trả lời đúng ở đây
+      const correctAnswer = "01/11";
+      
+      if (answer === correctAnswer.toLowerCase()) {
+        hiddenMessage.style.display = 'block';
+        hiddenMessage.style.animation = 'fadeIn 1s ease-in-out';
+      } else {
+        alert('Hãy thử lại nhé! ❤️');
+      }
+    }
+
+    // Add enter key support
+    document.getElementById('answer').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        checkAnswer();
+      }
+    });
+  </script>
+</body>
+</html>
+  <!-- Script to apply delay animations -->
+  <script>
+    // Tạo hiệu ứng sparkle
+    function createSparkles() {
+      const header = document.querySelector('header');
+      for (let i = 0; i < 20; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = Math.random() * 100 + '%';
+        sparkle.style.top = Math.random() * 100 + '%';
+        sparkle.style.animationDelay = Math.random() * 2 + 's';
+        header.appendChild(sparkle);
+      }
+    }
+
+    // Gọi hàm tạo sparkle khi trang load
+    window.addEventListener('load', createSparkles);
+
+    const sections = document.querySelectorAll('.story-section');
+    sections.forEach((sec, index) => {
+      sec.style.animation = 'slideUp 1s ease forwards';
+      sec.style.animationDelay = (index * 1 + 0.5) + 's';
+    });
+
+    // Love counter animation
+    const counter = document.getElementById('loveCounter');
+    let count = 0;
+    const targetCount = 926;
+    const duration = 2000;
+    const increment = targetCount / (duration / 16);
+
+    function updateCounter() {
+      count += increment;
+      if (count < targetCount) {
+        counter.textContent = Math.floor(count);
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.textContent = targetCount;
+      }
+    }
+
+    // Start counter animation when page loads
+    window.addEventListener('load', updateCounter);
+
+    // Create floating hearts when clicking the heart icon
+    function createHearts() {
+      for (let i = 0; i < 5; i++) {
+        const heart = document.createElement('div');
+        heart.innerHTML = '❤️';
+        heart.style.position = 'fixed';
+        heart.style.bottom = '20px';
+        heart.style.right = '20px';
+        heart.style.fontSize = '2em';
+        heart.style.zIndex = '999';
+        heart.style.animation = `floatHeart ${2 + Math.random() * 2}s ease-in-out forwards`;
+        document.body.appendChild(heart);
+
+        // Remove heart after animation
+        setTimeout(() => {
+          heart.remove();
+        }, 4000);
+      }
+    }
+
+    // Thêm hiệu ứng hover cho memory items
+    const memoryItems = document.querySelectorAll('.memory-item');
+    memoryItems.forEach(item => {
+      item.addEventListener('mouseover', () => {
+        item.style.transform = 'translateY(-10px) scale(1.05)';
+        item.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+      });
+      item.addEventListener('mouseout', () => {
+        item.style.transform = 'translateY(0) scale(1)';
+        item.style.boxShadow = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html> 
